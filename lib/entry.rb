@@ -55,13 +55,13 @@ module HarParty
     end
 
     def httparty_request_headers
-      request["headers"].map do |i|
+      @httparty_request_headers ||= request["headers"].map do |i|
         [i["name"], i["value"]]
       end.to_h
     end
 
     def httparty_request_query
-      request["queryString"].map do |i|
+      @httparty_request_query || request["queryString"].map do |i|
         [i["name"], i["value"]]
       end.to_h
     end
