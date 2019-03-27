@@ -1,25 +1,25 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "harparty/version"
+require "har_party/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "harparty"
-  spec.version       = Harparty::VERSION
+  spec.name          = "har_party"
+  spec.version       = HarParty::VERSION
   spec.authors       = ["Arthur Karganyan"]
   spec.email         = ["arthur.karganyan@gmail.com"]
 
   spec.summary       = %q{HAR with HTTParty}
   spec.description   = %q{HAR with HTTParty}
-  spec.homepage      = "https://github.com/arthurkarganyan/harparty"
+  spec.homepage      = "https://github.com/arthurkarganyan/har_party"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
     spec.metadata["homepage_uri"] = spec.homepage
-    spec.metadata["source_code_uri"] = "https://github.com/arthurkarganyan/harparty"
-    spec.metadata["changelog_uri"] = "https://github.com/arthurkarganyan/harparty"
+    spec.metadata["source_code_uri"] = "https://github.com/arthurkarganyan/har_party"
+    spec.metadata["changelog_uri"] = "https://github.com/arthurkarganyan/har_party"
   else
     raise "RubyGems 2.0 or newer is required to protect against " \
       "public gem pushes."
