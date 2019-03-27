@@ -50,6 +50,10 @@ module HarParty
       "#{request["method"]}\t#{type}\t#{request["url"]}"
     end
 
+    def font?
+      !!url.to_s[/\.woff\Z/]
+    end
+
     def httparty_request_headers
       request["headers"].map do |i|
         [i["name"], i["value"]]

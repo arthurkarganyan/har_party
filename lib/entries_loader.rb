@@ -14,7 +14,7 @@ module HarParty
         i.url.path[/\.js\z/] || i.url.path[/\.css\z/] || i.url.path[/\.svg\z/] || i.url.path[/\.woff2\z/] || i.url.path[/\.ttf\z/] || i.url.path[/\.json\z/]
       end.reject do |i|
         i.pic? || i.type['font-woff'] || i.request["method"] == "OPTIONS" || i.type == 'text/html'
-      end
+      end.reject(&:font?)
     end
   end
 end
