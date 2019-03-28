@@ -1,7 +1,7 @@
 module HarParty
   class Entry
     attr_reader :body
-    attr_accessor :url
+    attr_writer :url
 
     def initialize(body)
       @body = body
