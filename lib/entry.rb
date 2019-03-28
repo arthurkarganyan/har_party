@@ -1,7 +1,7 @@
 module HarParty
   class Entry
     attr_reader :body
-    attr_writer :url
+    attr_writer :httparty_request_query
 
     def initialize(body)
       @body = body
@@ -67,10 +67,14 @@ module HarParty
       end.to_h
     end
 
+    def clean_request_url
+      "#{url.scheme}://#{url.host}#{url.path}"
+    end
+
     def run!(session_id = nil)
       if request["method"] == 'GET'
         HTTParty.get(
-            url,
+            clean_request_url,
             query: httparty_request_query,
             headers: httparty_request_headers
         )
